@@ -37,7 +37,12 @@ We have included the jsonl in the project, and the fig could be download [here](
 
 
 ## Citation
-
-
-
-
+@misc{deng2025boostinggeneralizationreasoningvision,
+      title={Boosting the Generalization and Reasoning of Vision Language Models with Curriculum Reinforcement Learning}, 
+      author={Huilin Deng and Ding Zou and Rui Ma and Hongchen Luo and Yang Cao and Yu Kang},
+      year={2025},
+      eprint={2503.07065},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2503.07065}, 
+}
