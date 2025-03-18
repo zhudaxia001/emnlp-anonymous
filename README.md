@@ -7,14 +7,16 @@ Boosting the Generalization and Reasoning of Vision Language Models with Curricu
 
 ## Introduction
 We deeply investigate the R1-like RL in VLM(MLLM), mainly for answering the following questions:
-1. Can Rule-based Reinforcement Learning (RL) applied to multimodal mathematical data enhance general capabilities?
+1. Can Rule-based Reinforcement Learning (RL) applied to multimodal mathematical data enhance general capabilities? 
 2. Is it feasible to implement Rule-based RL in other multimodal tasks or computer vision (CV) tasks? If so, what specific improvements can be achieved?
 3. For small-scale multimodal large models with limited baseline capabilities, can the aforementioned experiences be applicable? If yes, what optimization strategies should be adopted?
 4. After the RL phase, is there a possibility of performance degradation in certain aspects of the model? How can the overall training process be refined to address this issue?
 
 ## Requirement
-1、We implete it based on [MS-Swift](https://github.com/modelscope/ms-swift)
+1、We implete it based on [MS-Swift](https://github.com/modelscope/ms-swift) 
+
 2、We perform GRPO based on [OpenR1-Multimodal](https://github.com/EvolvingLMMs-Lab/open-r1-multimodal/)
+
 3、As a result, the env could refer the above repo, thanks for their great work!
 
 ## Usage
@@ -25,4 +27,17 @@ We deeply investigate the R1-like RL in VLM(MLLM), mainly for answering the foll
 - train_code
   - grpo
   - sft
+  
 2、Hence, you only need to fine the right order and run .sh as the paper claims.
+
+## Dataset
+We have included the jsonl in the project, and the fig could be download [here](http...)
+
+## Result Update
+
+
+## Citation
+
+
+
+
