@@ -1,0 +1,10 @@
+train_datasets:
+    - json_path: /mnt/tenant-home_speed/dhl/RL_VL3B/data/coco_3k_2task//classify_v2_coco_train.jsonl
+    - json_path: /mnt/tenant-home_speed/dhl/RL_VL3B/data/coco_3k_2task//classify_v2_coco_val.jsonl
+    - json_path: /mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/openr1_8k/math_math_train.jsonl
+    - json_path: /mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/openr1_8k/math_math_test.jsonl
+    - json_path: /mnt/tenant-home_speed/dhl/RL_VL3B/data/coco_3k_2task//detection_coco_train.jsonl
+    - json_path: /mnt/tenant-home_speed/dhl/RL_VL3B/data/coco_3k_2task//detection_coco_val.jsonl
+
+val_datasets:
+    - json_path: /mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/openr1_8k/math_math_train.jsonl

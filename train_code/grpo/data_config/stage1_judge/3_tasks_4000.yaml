@@ -1,0 +1,12 @@
+train_datasets:
+    - json_path:  /mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/judge/judge_math_train.jsonl
+    - json_path: /mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/judge/judge_v2_coco_train.jsonl
+    - json_path: /mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/judge/judge_math_train.jsonl
+    - json_path:  /mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/judge/judge_math_val.jsonl
+    - json_path: /mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/judge/judge_v2_coco_val.jsonl
+    - json_path: /mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/judge/judge_math_val.jsonl
+
+val_datasets:
+    - json_path: /mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/judge/judge_v2_coco_val.jsonl
+
+

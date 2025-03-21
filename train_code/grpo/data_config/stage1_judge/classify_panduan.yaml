@@ -1,0 +1,7 @@
+train_datasets:
+    - json_path: /mnt/tenant-home_speed/dhl/RL_VL3B/data/coco_3k_2task/judge_v2_coco_train.jsonl
+
+val_datasets:
+    - json_path: /mnt/tenant-home_speed/dhl/RL_VL3B/data/coco_3k_2task/judge_v2_coco_val.jsonl
+
+

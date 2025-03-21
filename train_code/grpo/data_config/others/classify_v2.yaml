@@ -1,0 +1,30 @@
+# datasets:
+#     - json_path: /mnt/tenant-home_speed/dhl/VLM-R1-main/src/data/rec_jsons_processed/refcoco_train.json
+#     - json_path: /mnt/tenant-home_speed/dhl/VLM-R1-main/src/data/rec_jsons_processed/refcocop_train.json
+#     - json_path: /mnt/tenant-home_speed/dhl/VLM-R1-main/src/data/rec_jsons_processed/refcocog_train.json
+# /mnt/tenant-home_speed/dhl/VLM-R1-main/src/data/rec_jsons_processed/
+
+# COCO detection+classify
+# train_datasets:
+#     - json_path: /mnt/tenant-home_speed/dhl/RL_VL3B/data/coco_3k_2task/detection_coco_train.jsonl
+#     - json_path: /mnt/tenant-home_speed/dhl/RL_VL3B/data/coco_3k_2task/classify_coco_train.jsonl
+# val_datasets:
+#     - json_path: /mnt/tenant-home_speed/dhl/RL_VL3B/data/coco_3k_2task/detection_coco_val.jsonl
+#     - json_path: /mnt/tenant-home_speed/dhl/RL_VL3B/data/coco_3k_2task/classify_coco_val.jsonl
+
+
+# COCO classify
+# train_datasets:
+#     - json_path: /mnt/tenant-home_speed/dhl/RL_VL3B/data/coco_3k_2task/classify_coco_train.jsonl
+# val_datasets:
+#     - json_path: /mnt/tenant-home_speed/dhl/RL_VL3B/data/coco_3k_2task/classify_coco_val.jsonl
+
+
+# COCO VQA
+
+# COCO VQA
+train_datasets:
+    - json_path: /mnt/tenant-home_speed/dhl/RL_VL3B/data/coco_3k_2task/classify_v2_coco_train.jsonl
+
+val_datasets:
+    - json_path: /mnt/tenant-home_speed/dhl/RL_VL3B/data/coco_3k_2task/classify_v2_coco_val.jsonl

@@ -1,0 +1,10 @@
+train_datasets:
+    - json_path:  /mnt/tenant-home_speed/dhl/RL_VL3B/data/coco_3k_2task/addition_coco_judge_v2.jsonl
+    - json_path: /mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/judge/addition_coco_judge_detection.jsonl
+    - json_path: /mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/judge/judge_math_test.jsonl
+
+
+val_datasets:
+    - json_path: /mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/judge/judge_v2_coco_val.jsonl
+
+

@@ -1,0 +1,9 @@
+train_datasets:
+    - json_path: /mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/choice/math_choice_math_val.jsonl
+    - json_path: /mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/choice/choice_classify_v2_coco_val.jsonl
+    - json_path: /mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/choice/choice_detection_coco_val.jsonl
+
+val_datasets:
+    - json_path: /mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/choice/choice_detection_coco_val.jsonl
+
+
