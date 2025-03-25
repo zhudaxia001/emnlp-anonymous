@@ -1,4 +1,8 @@
 # Curr_REFT---Boosting the Generalization and Reasoning of Vision Language Models with Curriculum Reinforcement Learning
+
+- We upload our model weights (https://huggingface.co/ZTE-AIM/3B-Curr-ReFT) (https://huggingface.co/ZTE-AIM/7B-Curr-ReFT) ---2025.03.25
+- We upload our data (https://huggingface.co/datasets/ZTE-AIM/Curr-ReFT-data). --- 2025.03.25
+- We release our code. --- 2025.03.21
 - We will update the data, code, and model weight, once the cor finish checking.
 
 This is our official implementation of paper 
