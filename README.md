@@ -72,7 +72,7 @@ torchrun --nproc_per_node="8" \
     --save_steps 100 \
     --save_only_model true
 ```
-After replacing these placeholders with your actual paths, you can run the script using:
+After replacing these placeholders with your actual paths, you can run the script for stage1:
 ```python
 sh /Curr_REFT/train_code/grpo/Train_sh_files/Curriculum-based_RL_math_resize/stage1_math_resize.sh
 ```
@@ -87,8 +87,8 @@ The placeholders are included for you to replace with your actual paths.
     --master_port="12348" \
    /Curr_REFT/train_code/grpo/open-r1-multimodal/src/open_r1/Stage2_choice_math_resize.py \
     --deepspeed /mnt/tenant-home_speed/dhl/VLM-R1-main/src/open-r1-multimodal/local_scripts/zero3.json \
-    --output_dir /Stage2_Multi_choice/Stage2_Qwen2.5-VL-3B-GRPO-3_tasks_3000 \ #output
-    --model_name_or_path /Stage1_True_or_False/Qwen2.5-VL-3B-3_tasks_4000/checkpoint-500 \ 
+    --output_dir /Stage2_Multi_choice/Stage2_Qwen2.5-VL-3B-GRPO-3_tasks_3000 \ # output
+    --model_name_or_path /Stage1_True_or_False/Qwen2.5-VL-3B-3_tasks_4000/checkpoint-500 \ # path/to/Stage1_output
     --dataset_name /data_config/stage2_multi_choice/3_tasks_3000.yaml \  # data_config
     --image_root /path/to/image_root \   #image_data_root
     --max_prompt_length 2048 \
@@ -107,12 +107,45 @@ The placeholders are included for you to replace with your actual paths.
     --save_steps 100 \
     --save_only_model true
 ```
-After replacing these placeholders with your actual paths, you can run the script using:
+After replacing these placeholders with your actual paths, you can run the stage2 script using:
 ```python
-sh /Curr_REFT/train_code/grpo/Train_sh_files/Curriculum-based_RL_math_resize/stage2_math_resize.sh
+sh /Curr_REFT/train_code/grpo/Train_sh_files/Curriculum-based_RL_math_resize/stage2_math_resize.sh  
 ```
 
-
+### Stage 3: Open
+The placeholders are included for you to replace with your actual paths.
+```bash
+ torchrun --nproc_per_node="8" \
+    --nnodes="1" \
+    --node_rank="0" \
+    --master_addr="127.0.0.1" \
+    --master_port="12349" \
+    /Curr_REFT/train_code/grpo/open-r1-multimodal/src/open_r1/Stage3_open_math_resize.py \
+    --deepspeed /mnt/tenant-home_speed/dhl/VLM-R1-main/src/open-r1-multimodal/local_scripts/zero3.json \
+    --output_dir /Stage3_Open/Stage3_Qwen2.5-VL-3B-GRPO-3_tasks_3000 \ # output
+    --model_name_or_path /Stage2_Multi_choice/Stage2_Qwen2.5-VL-3B-GRPO-3_tasks_3000/checkpoint-500 \
+    --dataset_name /data_config/others/det_classify_math_v2.yaml \    # data_config
+    --image_root /path/to/image_root \   #image_data_root
+    --max_prompt_length 2048 \
+    --num_generations 4 \
+    --per_device_train_batch_size 1 \
+    --gradient_accumulation_steps 1 \
+    --logging_steps 1 \
+    --bf16 \
+    --torch_dtype bfloat16 \
+    --data_seed 42 \
+    --report_to wandb \
+    --gradient_checkpointing false \
+    --attn_implementation flash_attention_2 \
+    --num_train_epochs 2 \
+    --run_name $RUN_NAME \
+    --save_steps 100 \
+    --save_only_model true
+```
+After replacing these placeholders with your actual paths, you can run the script for stage3:
+```python
+sh /Curr_REFT/train_code/grpo/Train_sh_files/Curriculum-based_RL_math_resize/stage3_math_resize.sh
+```
 
 
 
