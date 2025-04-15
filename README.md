@@ -50,9 +50,9 @@ torchrun --nproc_per_node="8" \
     --node_rank="0" \
     --master_addr="127.0.0.1" \
     --master_port="12347" \
-    Curr_REFT/src/open-r1-multimodal/src/open_r1/Stage1_judge_math_resize.py \
+    /Curr_REFT/train_code/grpo/open-r1-multimodal/src/open_r1/Stage1_judge_math_resize.py \
     --deepspeed /mnt/tenant-home_speed/dhl/VLM-R1-main/src/open-r1-multimodal/local_scripts/zero3.json \
-    --output_dir /mnt/tenant-home_speed/dhl/VLM-R1-main/Output_Curriculum-based_RL_math_resize/Stage1_True_or_False/Qwen2.5-VL-3B-3_tasks_4000 \
+    --output_dir /Stage1_True_or_False/Qwen2.5-VL-3B-3_tasks_4000 \ # output
     --model_name_or_path /mnt/tenant-home_speed/AIM/model/Qwen2.5-VL-3B-Instruct \  # Path/to/Qwen2.5-VL-3B-Instruct
     --dataset_name /data_config/stage1_judge/3_tasks_4000.yaml \  # data_config
     --image_root /path/to/image_root \   #image_data_root
@@ -77,6 +77,40 @@ After replacing these placeholders with your actual paths, you can run the scrip
 sh /Curr_REFT/train_code/grpo/Train_sh_files/Curriculum-based_RL_math_resize/stage1_math_resize.sh
 ```
 
+### Stage 2: Choice
+The placeholders are included for you to replace with your actual paths.
+```bash
+   torchrun --nproc_per_node="8" \
+    --nnodes="1" \
+    --node_rank="0" \
+    --master_addr="127.0.0.1" \
+    --master_port="12348" \
+   /Curr_REFT/train_code/grpo/open-r1-multimodal/src/open_r1/Stage2_choice_math_resize.py \
+    --deepspeed /mnt/tenant-home_speed/dhl/VLM-R1-main/src/open-r1-multimodal/local_scripts/zero3.json \
+    --output_dir /Stage2_Multi_choice/Stage2_Qwen2.5-VL-3B-GRPO-3_tasks_3000 \ #output
+    --model_name_or_path /Stage1_True_or_False/Qwen2.5-VL-3B-3_tasks_4000/checkpoint-500 \ 
+    --dataset_name /data_config/stage2_multi_choice/3_tasks_3000.yaml \  # data_config
+    --image_root /path/to/image_root \   #image_data_root
+    --max_prompt_length 2048 \
+    --num_generations 2 \
+    --per_device_train_batch_size 1 \
+    --gradient_accumulation_steps 1 \
+    --logging_steps 1 \
+    --bf16 \
+    --torch_dtype bfloat16 \
+    --data_seed 42 \
+    --report_to wandb \
+    --gradient_checkpointing false \
+    --attn_implementation flash_attention_2 \
+    --num_train_epochs 1 \
+    --run_name $RUN_NAME \
+    --save_steps 100 \
+    --save_only_model true
+```
+After replacing these placeholders with your actual paths, you can run the script using:
+```python
+sh /Curr_REFT/train_code/grpo/Train_sh_files/Curriculum-based_RL_math_resize/stage2_math_resize.sh
+```
 
 
 
