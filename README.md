@@ -18,9 +18,18 @@ We deeply investigate the R1-like RL in VLM(MLLM), mainly for answering the foll
 
 ## Requirement
 1、We implete SFT training based on [MS-Swift](https://github.com/modelscope/ms-swift) 
-
+for specifically we use ms-swift 3.2.0, 可以用如下指令安装:
+```bash
+   conda create -n swift python=3.10
+   conda activate swift
+   pip install ms-swift==3.2.0
+```
 2、We perform GRPO based on [OpenR1-Multimodal](https://github.com/EvolvingLMMs-Lab/open-r1-multimodal/)
-
+```bash
+   conda create -n R1-V python=3.10
+   conda activate R1-V
+   pip install -r requirements_for_R1_V.txt
+```
 3、As a result, the env could refer the above repo, thanks for their great work!
 
 ## Training
