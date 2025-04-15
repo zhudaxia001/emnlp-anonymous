@@ -40,8 +40,9 @@ Curr_REFT/
         └── reject_sft/
 ```
 We have placed the training scripts in the following directories:
-For Qwen2.5-VL-3B: Curr_REFT/train_code/grpo/Train_sh_files/Curriculum-based_RL_math_resize
-For Qwen2.5-VL-7B: Curr_REFT/train_code/grpo/Train_sh_files/7B_Curriculum-based_RL_math_resize
+-For Qwen2.5-VL-3B: Curr_REFT/train_code/grpo/Train_sh_files/Curriculum-based_RL_math_resize
+-For Qwen2.5-VL-7B: Curr_REFT/train_code/grpo/Train_sh_files/7B_Curriculum-based_RL_math_resize
+
 Hence, you only need to fine the right order and run .sh as the paper claims.
 
 2、For three-stage curriculum reinforcement learning (GRPO), execute the following stages:
