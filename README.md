@@ -24,15 +24,26 @@ We deeply investigate the R1-like RL in VLM(MLLM), mainly for answering the foll
 3、As a result, the env could refer the above repo, thanks for their great work!
 
 ## Usage
-1、We organized the code as follows:
+
+  
+2、Hence, you only need to fine the right order and run .sh as the paper claims.
+
+## Training
+
+1、Download the code and [grpo_sft_data.zip](https://www.baidu.com) and organized the code as follows:
 - grpo_sft_data
   - grpo_data
   - SFT_data
 - train_code
   - grpo
   - sft
-  
-2、Hence, you only need to fine the right order and run .sh as the paper claims.
+
+
+
+
+
+
+
 
 ## Dataset
 We have included the jsonl in the project, and the fig could be download [here](http...)
