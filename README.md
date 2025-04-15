@@ -16,6 +16,23 @@ We deeply investigate the R1-like RL in VLM(MLLM), mainly for answering the foll
 3. For small-scale multimodal large models with limited baseline capabilities, can the aforementioned experiences be applicable? If yes, what optimization strategies should be adopted?
 4. After the RL phase, is there a possibility of performance degradation in certain aspects of the model? How can the overall training process be refined to address this issue?
 
+## Models & Data
+
+## 🤖 Models
+
+- [OVD](https://github.com/ding523/Curr_REFT/blob/main/ovd) : Trained with VLM-R1, our Open-Vocabulary Detection (OVD) model achieves the state-of-the-art performance on OVDEval.
+
+- [Math](https://github.com/ding523/Curr_REFT/blob/main/math) : Through VLM-R1 training, our math model focuses on multimodal reasoning tasks and has achieved Top1 on the OpenCompass Multi-modal Reasoning Leaderboard among models < 4B.
+
+- [REC](https://github.com/ding523/Curr_REFT/blob/main/rec) : Trained with VLM-R1, our Referring Expression Comprehension (REC) model showcases the superior performance on out-of-domain data and a series of reasoning-grounding tasks.
+
+| Version | Base VLM | Checkpoint | Task Type |
+| ------- | -------- | ---------- | --------- |
+| VLM-R1-Qwen2.5VL-3B-OVD-0321 | Qwen2.5VL-3B | [omlab/VLM-R1-Qwen2.5VL-3B-OVD-0321](https://huggingface.co/omlab/VLM-R1-Qwen2.5VL-3B-OVD-0321) | Open-Vocabulary Detection |
+| VLM-R1-Qwen2.5VL-3B-Math-0305 | Qwen2.5VL-3B | [omlab/VLM-R1-Qwen2.5VL-3B-Math-0305](https://huggingface.co/omlab/VLM-R1-Qwen2.5VL-3B-Math-0305) | Multi-Modal Math |
+| VLM-R1-Qwen2.5VL-3B-REC-500steps | Qwen2.5VL-3B | [omlab/Qwen2.5VL-3B-VLM-R1-REC-500steps](https://huggingface.co/omlab/Qwen2.5VL-3B-VLM-R1-REC-500steps) | REC/Reasoning-Grounding |
+
+
 ## Requirement
 1、We implete SFT training based on [MS-Swift](https://github.com/modelscope/ms-swift) 
 for specifically we use ms-swift 3.2.0, 可以用如下指令安装:
