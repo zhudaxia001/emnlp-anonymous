@@ -29,23 +29,52 @@ We deeply investigate the R1-like RL in VLM(MLLM), mainly for answering the foll
 2、Hence, you only need to fine the right order and run .sh as the paper claims.
 
 ## Training
-
 1、Download the code and JSON data ([grpo_sft_data.zip](https://github.com/ding523/Curr_REFT/blob/main/grpo_sft_data.zip)) and organize them as follows:
-- grpo_sft_data
-  - grpo_data
-  - SFT_data
-- train_code
-  - grpo
-    -Train_sh_files
-    -data_config
-    -open-r1-multimodal
-  - sft
-    -normal_sft
-    -reject_sft
+Curr_REFT/
+├── grpo_sft_data/
+│   ├── grpo_data/
+│   └── SFT_data/
+│
+└── train_code/
+    ├── grpo/
+    │   ├── Train_sh_files/
+    │   ├── data_config/
+    │   └── open-r1-multimodal/
+    └── sft/
+        ├── normal_sft/
+        └── reject_sft/
 
-for grpo：
+2、For three-stage curriculum reinforcement learning (GRPO), execute the following stages:
+### Stage 1: Math Resize
+Run the script: 并且根据本地路径调整参数
+/Curr_REFT/train_code/grpo/Train_sh_files/Curriculum-based_RL_math_resize/stage1_math_resize.sh
 
-
+torchrun --nproc_per_node="8" \
+    --nnodes="1" \
+    --node_rank="0" \
+    --master_addr="127.0.0.1" \
+    --master_port="12347" \
+     Curr_REFT/src/open-r1-multimodal/src/open_r1/Stage1_judge_math_resize.py \
+    --deepspeed /mnt/tenant-home_speed/dhl/VLM-R1-main/src/open-r1-multimodal/local_scripts/zero3.json \  
+    --output_dir /mnt/tenant-home_speed/dhl/VLM-R1-main/Output_Curriculum-based_RL_math_resize/Stage1_True_or_False/Qwen2.5-VL-3B-3_tasks_4000 \
+    --model_name_or_path /mnt/tenant-home_speed/AIM/model/Qwen2.5-VL-3B-Instruct \  # Qwen2.5-VL-3B-Instruct
+    --dataset_name /data_config/stage1_judge/3_tasks_4000.yaml \   # data_config
+    --image_root /mnt/tenant-home_speed/dhl/RL_VL3B/data/ \
+    --max_prompt_length 2048 \
+    --num_generations 4 \
+    --per_device_train_batch_size 1 \
+    --gradient_accumulation_steps 1 \
+    --logging_steps 1 \
+    --bf16 \
+    --torch_dtype bfloat16 \
+    --data_seed 42 \
+    --report_to wandb \
+    --gradient_checkpointing false \
+    --attn_implementation flash_attention_2 \
+    --num_train_epochs 1 \
+    --run_name $RUN_NAME \    # $RUN_NAME
+    --save_steps 100 \
+    --save_only_model true
 
 
 
