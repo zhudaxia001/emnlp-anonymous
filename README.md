@@ -30,7 +30,7 @@ We deeply investigate the R1-like RL in VLM(MLLM), mainly for answering the foll
 
 ## Training
 
-1、Download the code and [grpo_sft_data.zip](https://www.baidu.com) and organized the code as follows:
+1、Download the code and [grpo_sft_data.zip](https://github.com/ding523/Curr_REFT/blob/main/grpo_sft_data.zip) and organize the code as follows:
 - grpo_sft_data
   - grpo_data
   - SFT_data
