@@ -15,7 +15,7 @@ We deeply investigate the R1-like RL in VLM(MLLM), mainly for answering the foll
 2. Is it feasible to implement Rule-based RL in other multimodal tasks or computer vision (CV) tasks? If so, what specific improvements can be achieved?
 3. For small-scale multimodal large models with limited baseline capabilities, can the aforementioned experiences be applicable? If yes, what optimization strategies should be adopted?
 4. After the RL phase, is there a possibility of performance degradation in certain aspects of the model? How can the overall training process be refined to address this issue?
-![image](https://github.com/user-attachments/assets/e6f4591c-71ed-4a2f-b3d2-b391ef02abdf)
+
 
 ## Models & Data
 
