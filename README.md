@@ -40,6 +40,7 @@ Curr_REFT/
         └── reject_sft/
 ```
 Hence, you only need to fine the right order and run .sh as the paper claims.
+
 2、For three-stage curriculum reinforcement learning (GRPO), execute the following stages:
 ### Stage 1: Judge
 The placeholders are included for you to replace with your actual paths.
