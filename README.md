@@ -20,17 +20,32 @@ We deeply investigate the R1-like RL in VLM(MLLM), mainly for answering the foll
 
 ## 🤖 Models
 
-- [OVD](https://github.com/ding523/Curr_REFT/blob/main/ovd) : Trained with VLM-R1, our Open-Vocabulary Detection (OVD) model achieves the state-of-the-art performance on OVDEval.
+- [ZTE-AIM](https://huggingface.co/ZTE-AIM) : Main repository where we've uploaded model weights and data for Curriculum Reinforcement Learning and reject SFT.
+- Trained with Detection/Classification/Multi-Modal Math tasks, our Curr-ReFT model demonstrates superior performance on out-of-domain data and various reasoning-grounding tasks.
 
-- [Math](https://github.com/ding523/Curr_REFT/blob/main/math) : Through VLM-R1 training, our math model focuses on multimodal reasoning tasks and has achieved Top1 on the OpenCompass Multi-modal Reasoning Leaderboard among models < 4B.
-
-- [REC](https://github.com/ding523/Curr_REFT/blob/main/rec) : Trained with VLM-R1, our Referring Expression Comprehension (REC) model showcases the superior performance on out-of-domain data and a series of reasoning-grounding tasks.
 
 | Version | Base VLM | Checkpoint | Task Type |
 | ------- | -------- | ---------- | --------- |
-| VLM-R1-Qwen2.5VL-3B-OVD-0321 | Qwen2.5VL-3B | [omlab/VLM-R1-Qwen2.5VL-3B-OVD-0321](https://huggingface.co/omlab/VLM-R1-Qwen2.5VL-3B-OVD-0321) | Open-Vocabulary Detection |
-| VLM-R1-Qwen2.5VL-3B-Math-0305 | Qwen2.5VL-3B | [omlab/VLM-R1-Qwen2.5VL-3B-Math-0305](https://huggingface.co/omlab/VLM-R1-Qwen2.5VL-3B-Math-0305) | Multi-Modal Math |
-| VLM-R1-Qwen2.5VL-3B-REC-500steps | Qwen2.5VL-3B | [omlab/Qwen2.5VL-3B-VLM-R1-REC-500steps](https://huggingface.co/omlab/Qwen2.5VL-3B-VLM-R1-REC-500steps) | REC/Reasoning-Grounding |
+| Qwen2.5VL-3B-Curr-ReFT | Qwen2.5VL-3B | [ZTE-AIM/3B-Curr-ReFT](https://huggingface.co/ZTE-AIM/3B-Curr-ReFT) |Detection/Classification/Multi-Modal Math |
+| Qwen2.5VL-7B-Curr-ReFT | Qwen2.5VL-7B | [ZTE-AIM/7B-Curr-ReFT](https://huggingface.co/omlab/VLM-R1-Qwen2.5VL-3B-Math-0305) |Detection/Classification/Multi-Modal Math |
+
+## 🤖 Data
+- [Data](https://huggingface.co/datasets/ZTE-AIM/Curr-ReFT-data) We've uploaded data for both reinforcement learning and rejection sampling stages in JSON format (question-answer pairs) along with original images.
+- The data is organized as follows:
+ 
+```bash
+-grpo_data
+  -images
+  -test
+  -train
+-SFT_data
+  -reject
+  -sft
+  -images
+```
+
+* grpo_data: The "images" folder contains all image files. The "train" folder includes training and in-domain test JSONL files for all three stages (the test files inside are for in-domain scenarios), while the "test" folder contains only JSONL files for out-of-domain testing across the three tasks.
+* SFT_data: The "reject" folder contains JSON files for rejection-based SFT, while the "sft" folder contains JSONL files for standard SFT (used for comparative experiments in the paper). All images are stored in the "images" folder.
 
 
 ## Requirement
