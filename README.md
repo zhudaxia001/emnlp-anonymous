@@ -23,10 +23,6 @@ We deeply investigate the R1-like RL in VLM(MLLM), mainly for answering the foll
 
 3、As a result, the env could refer the above repo, thanks for their great work!
 
-## Usage
-
-2、Hence, you only need to fine the right order and run .sh as the paper claims.
-
 ## Training
 1、Download the code and JSON data ([grpo_sft_data.zip](https://github.com/ding523/Curr_REFT/blob/main/grpo_sft_data.zip)) and organize them as follows:
 ```bash
@@ -43,7 +39,7 @@ Curr_REFT/
         ├── normal_sft/
         └── reject_sft/
 ```
-
+Hence, you only need to fine the right order and run .sh as the paper claims.
 2、For three-stage curriculum reinforcement learning (GRPO), execute the following stages:
 ### Stage 1: Judge
 The placeholders are included for you to replace with your actual paths.
