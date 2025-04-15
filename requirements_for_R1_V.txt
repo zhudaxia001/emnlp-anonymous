@@ -168,6 +168,7 @@ libcst==1.6.0
 libmambapy @ file:///croot/mamba-split_1698782620632/work/libmambapy
 librosa==0.10.2.post1
 liger_kernel==0.5.2
+# "lighteval @ git+https://github.com/huggingface/lighteval.git@4f381b352c0e467b5870a97d41cb66b487a2c503#egg=lighteval[math]",
 # Editable Git install with no remote (lighteval==0.6.0.dev0)
 -e /mnt/tenant-home_speed/dhl/R1-V/src/open-r1-multimodal/git/lighteval
 llvmlite==0.42.0
@@ -377,9 +378,11 @@ torchaudio==2.5.1
 torchvision==0.20.1
 tqdm==4.66.5
 traitlets==5.14.3
+# transformers==4.49.0
 # Editable Git install with no remote (transformers==4.49.0.dev0)
 -e /mnt/tenant-home_speed/dhl/R1-V/src/open-r1-multimodal/git/transformers-main
 triton==3.1.0
+#  "trl @ git+https://github.com/huggingface/trl.git@main",
 # Editable Git install with no remote (trl==0.15.0.dev0)
 -e /mnt/tenant-home_speed/dhl/R1-V/src/open-r1-multimodal/git/trl
 truststore @ file:///croot/truststore_1695244293384/work
