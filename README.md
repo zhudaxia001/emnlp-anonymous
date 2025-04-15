@@ -17,7 +17,7 @@ We deeply investigate the R1-like RL in VLM(MLLM), mainly for answering the foll
 4. After the RL phase, is there a possibility of performance degradation in certain aspects of the model? How can the overall training process be refined to address this issue?
 
 ## Requirement
-1、We implete it based on [MS-Swift](https://github.com/modelscope/ms-swift) 
+1、We implete SFT training based on [MS-Swift](https://github.com/modelscope/ms-swift) 
 
 2、We perform GRPO based on [OpenR1-Multimodal](https://github.com/EvolvingLMMs-Lab/open-r1-multimodal/)
 
@@ -30,13 +30,21 @@ We deeply investigate the R1-like RL in VLM(MLLM), mainly for answering the foll
 
 ## Training
 
-1、Download the code and [grpo_sft_data.zip](https://github.com/ding523/Curr_REFT/blob/main/grpo_sft_data.zip) and organize the code as follows:
+1、Download the code and JSON data ([grpo_sft_data.zip](https://github.com/ding523/Curr_REFT/blob/main/grpo_sft_data.zip)) and organize them as follows:
 - grpo_sft_data
   - grpo_data
   - SFT_data
 - train_code
   - grpo
+    -Train_sh_files
+    -data_config
+    -open-r1-multimodal
   - sft
+    -normal_sft
+    -reject_sft
+
+for grpo：
+
 
 
 
