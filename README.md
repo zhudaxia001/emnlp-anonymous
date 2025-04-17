@@ -269,7 +269,7 @@ The evaluation uses the same environment configuration as training: [R1-V](https
 #### Task-Specific Scripts
 For out-of-domain testing of detection and math tasks, we provide specialized scripts:
 
-- `/Curr-ReFT/src/eval/muti_process_eval_for_refgta.py`: Multi-GPU script for RefGTA dataset (out-of-domain detection), includes additional coordinate transformations. Note: We recommend creating a shell script to test multiple checkpoints sequentially ([Test_refgta.sh](https://github.com/ding523/Curr_REFT/blob/main/eval/Test_refgta.sh)).
+- `/Curr-ReFT/src/eval/single_process_eval_for_refgta.py`: Multi-GPU script for RefGTA dataset (out-of-domain detection), includes additional coordinate transformations. Note: We recommend creating a shell script to test multiple checkpoints sequentially ([Test_refgta.sh](https://github.com/ding523/Curr_REFT/blob/main/eval/Test_refgta.sh)).
 
 #### Base Model Evaluation
 - `/Curr-ReFT/src/eval/muti_process_eval_for_base_model.py`: Multi-GPU script for generating comparative results with base models
