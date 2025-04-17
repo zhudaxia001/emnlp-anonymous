@@ -364,7 +364,7 @@ Rejected Sample based Self-improvement Data comprises 1,520 high-quality example
 | 10 | 3B+Curr-RL                | 77.36| 36.74 | 68.99   | 56.3      | 594      |
 | 11 | 3B_Curr-ReFT              | 79.66| 39.95 | 69.27   | 57.9      | 623      |
 | 12 | 7B-Curr-ReFT              | 83.16| 49.95 | 80.15   | 65.8      | 727      |
-
+```
 
 ## Institution
 - ZTE-AIM
