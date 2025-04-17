@@ -124,11 +124,7 @@ OUTPUT_PATH="{OUTPUT_DIR}/{STEPS}.json"
 BSZ=60
 DATA_ROOT = "/mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/rec_jsons_processed"
 TEST_DATASETS = ['refgta_subsample_resize']
-#/refgta_subsample.json
 
-
-# TEST_DATASETS = ['refcoco_val', 'refcocop_val', 'refcocog_val']
-# IMAGE_ROOT = "/data/shz/dataset/coco"
 
 
 IMAGE_ROOT = "/mnt/tenant-home_speed/dhl/RL_VL3B/test_data/refgta/"
