@@ -1,5 +1,8 @@
 # Curr_REFT---Boosting the Generalization and Reasoning of Vision Language Models with Curriculum Reinforcement Learning
 
+- We uploaded our Evaluation guide along with the complete test scripts and the missing SuperCLEVR JSONL files for math out-domain testing at [Curr-ReFT-eval](https://github.com/ding523/Curr_REFT/tree/main/eval) --- 2025.04.17
+- We uploaded our Huggingface Datacard with dataset format specifications and usage instructions at [Curr-ReFT-data](https://huggingface.co/datasets/ZTE-AIM/Curr-ReFT-data), as well as model usage guidelines and parameter descriptions at [7B-Curr-ReFT](https://huggingface.co/ZTE-AIM/7B-Curr-ReFT) and [3B-Curr-ReFT](https://huggingface.co/ZTE-AIM/3B-Curr-ReFT) --- 2025.04.17
+- We updated our README.md to include code structure and usage instructions --- 2025.04.16
 - We upload our model weights (https://huggingface.co/ZTE-AIM/3B-Curr-ReFT) (https://huggingface.co/ZTE-AIM/7B-Curr-ReFT) ---2025.03.25
 - We upload our data (https://huggingface.co/datasets/ZTE-AIM/Curr-ReFT-data). --- 2025.03.25
 - We release our code. --- 2025.03.21
