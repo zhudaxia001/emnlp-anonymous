@@ -293,7 +293,8 @@ Results in this version, we use Gpt-3.5t as a judge, which is differenet from th
 
 
 ## Dataset
-We have included the jsonl in the project, and the fig could be download [here](https://huggingface.co/datasets/ZTE-AIM/Curr-ReFT-data)
+
+We have uploaded the jsonl and fig datas, which could be download [here](https://huggingface.co/datasets/ZTE-AIM/Curr-ReFT-data)
 
 ### Curriculum Reinforcement Learning Data
 
