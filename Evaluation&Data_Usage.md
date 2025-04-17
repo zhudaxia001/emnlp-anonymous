@@ -7,7 +7,7 @@ task_categories:
 size_categories:
 - 1K<n<10K
 ---
-# Curr-ReFT-data
+# Evaluetion&Curr-ReFT-data
 
 [\[📂 GitHub\]](https://github.com/ding523/Curr_REFT)[\[📝 Paper\]](https://arxiv.org/pdf/2503.07065)
 [\[🤗 HF Dataset\]](https://huggingface.co/datasets/ZTE-AIM/Curr-ReFT-data)  [\[🤗 HF-Model: Curr-ReFT-3B\]](https://huggingface.co/ZTE-AIM/3B-Curr-ReFT) 
@@ -34,7 +34,7 @@ Curr-ReFT-data contains training data for both stages of the Curr-ReFT methodolo
 * grpo_data: The "images" folder contains all image files. The "train" folder includes training and in-domain test JSONL files for all three stages (the test files inside are for in-domain scenarios), while the "test" folder contains only JSONL files for out-of-domain testing across the three tasks.
 * SFT_data: The "reject" folder contains JSON files for Rejected Sample based Self-improvement, while the "sft" folder contains JSONL files for standard SFT (used for comparative experiments in the paper). All images are stored in the "images" folder.
 
-## Test Files
+## Test Configuration
 
 The dataset includes both in-domain and out-of-domain test files for comprehensive evaluation:
 
@@ -50,9 +50,9 @@ The dataset includes both in-domain and out-of-domain test files for comprehensi
 
 | Task Type | File Path |
 |-----------|-----------|
-| Detection | `/Curr-ReFT-data/grpo_data/test/Refgta/refgta_subsample_resize.json` |
+| Detection | `/Curr-ReFT-data/grpo_data/test/Refgta/refgta_subsample_resize.json` ([RefGTA Image Download](https://drive.google.com/drive/folders/1pcdwA--xSAkbsOwjqhhyXMRZH7_sjQXU)) |
 | Classification | `/Curr-ReFT-data/grpo_data/test/pascal/classify_pascal_voc_test.jsonl` |
-| Math | `/Curr-ReFT-data/grpo_data/test/superclever/superclevr_test200_counting_problems.jsonl` |
+| Math | `/Curr-ReFT-data/grpo_data/test/superclever/superclevr_test200_counting_problems.jsonl`  ([Superclevr Image Download](https://www.cs.jhu.edu/~zhuowan/zhuowan/SuperCLEVR/to_be_released/images.zip)) |
 
 These test files are used to evaluate model performance on both familiar (in-domain) and unfamiliar (out-of-domain) data distributions, providing a comprehensive assessment of the model's generalization capabilities.
 
@@ -63,9 +63,9 @@ To accelerate testing, we utilize multi-GPU evaluation with each GPU testing a d
 
 - `/Curr-ReFT/src/eval/muti_process_eval.py`: Main evaluation script for all in-domain and out-of-domain tests across the three tasks.
 
-- `/Curr-ReFT/src/eval/muti_process_eval_for_refgta.py`: Specialized script for out-of-domain detection testing on the RefGTA dataset, which includes additional coordinate transformations for more accurate evaluation. ([RefGTA Image Download](https://drive.google.com/drive/folders/1pcdwA--xSAkbsOwjqhhyXMRZH7_sjQXU))
+- `/Curr-ReFT/src/eval/muti_process_eval_for_refgta.py`: Specialized script for out-of-domain detection testing on the RefGTA dataset, which includes additional coordinate transformations for more accurate evaluation.
 
-- `/Curr-ReFT/src/eval/test_counting_superclevr.py`: Specialized script for out-of-domain math testing on the Superclever dataset. ([Superclevr Image Download](https://www.cs.jhu.edu/~zhuowan/zhuowan/SuperCLEVR/to_be_released/images.zip))
+- `/Curr-ReFT/src/eval/test_counting_superclevr.py`: Specialized script for out-of-domain math testing on the Superclever dataset.
 
 - `/Curr-ReFT/src/eval/muti_process_eval_for_base_model.py`: Dedicated script for testing base models to generate comparative experimental results.
 
