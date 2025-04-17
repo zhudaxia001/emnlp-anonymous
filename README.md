@@ -66,7 +66,9 @@ for specifically we use ms-swift 3.2.0:
    conda activate R1-V
    pip install -r requirements_for_R1_V.txt
 ```
-3、As a result, the env could refer the above repo, thanks for their great work!
+**Note**: Some packages in `requirements_for_R1_V.txt` require local installation. Please follow these steps:
+1. Download the packages from the provided links in the requirements file
+2. Install them using `pip install -e .` in their respective directories
 
 ## Training
 1、Download the code and JSON data ([grpo_sft_data.zip](https://github.com/ding523/Curr_REFT/blob/main/grpo_sft_data.zip)) and organize them as follows:
@@ -259,15 +261,20 @@ These test files are used to evaluate model performance on both familiar (in-dom
 
 ### Evaluation Scripts
 
-To accelerate testing, we utilize multi-GPU evaluation with each GPU testing a different checkpoint:
+The evaluation uses the same environment configuration as training: [R1-V](https://github.com/ding523/Curr_REFT/blob/main/requirements_for_R1_V.txt)
 
-- `/Curr-ReFT/src/eval/muti_process_eval.py`: Main evaluation script for all in-domain and out-of-domain tests across the three tasks.
+#### Main Evaluation Script
+- `/Curr-ReFT/src/eval/muti_process_eval.py`: Multi-GPU evaluation script for most in-domain and out-of-domain tests across all three tasks.
 
-- `/Curr-ReFT/src/eval/muti_process_eval_for_refgta.py`: Specialized script for out-of-domain detection testing on the RefGTA dataset, which includes additional coordinate transformations for more accurate evaluation.
+#### Task-Specific Scripts
+For out-of-domain testing of detection and math tasks, we provide specialized scripts:
 
-- `/Curr-ReFT/src/eval/test_counting_superclevr.py`: Specialized script for out-of-domain math testing on the Superclever dataset.
+- `/Curr-ReFT/src/eval/muti_process_eval_for_refgta.py`: Multi-GPU script for RefGTA dataset (out-of-domain detection), includes additional coordinate transformations
+- `/Curr-ReFT/src/eval/test_counting_superclevr.py`: Single-GPU script for Superclever dataset (out-of-domain math). Note: We recommend creating a shell script to test multiple checkpoints sequentially
 
-- `/Curr-ReFT/src/eval/muti_process_eval_for_base_model.py`: Dedicated script for testing base models to generate comparative experimental results.
+#### Base Model Evaluation
+- `/Curr-ReFT/src/eval/muti_process_eval_for_base_model.py`: Multi-GPU script for generating comparative results with base models
+
 
 
 ## Result Update
