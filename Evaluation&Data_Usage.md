@@ -1,5 +1,5 @@
-
 ---
+license: apache-2.0
 task_categories:
 - question-answering
 - multiple-choice
@@ -63,10 +63,11 @@ To accelerate testing, we utilize multi-GPU evaluation with each GPU testing a d
 
 - `/Curr-ReFT/src/eval/muti_process_eval.py`: Main evaluation script for all in-domain and out-of-domain tests across the three tasks.
 
-- `/Curr-ReFT/src/eval/muti_process_eval_for_refgta.py`: Specialized script for out-of-domain detection testing on the RefGTA dataset, which includes additional coordinate transformations for more accurate evaluation.
+- `/Curr-ReFT/src/eval/muti_process_eval_for_refgta.py`: Specialized script for out-of-domain detection testing on the RefGTA dataset, which includes additional coordinate transformations for more accurate evaluation. ([RefGTA Image Download](https://drive.google.com/drive/folders/1pcdwA--xSAkbsOwjqhhyXMRZH7_sjQXU))
+
+- `/Curr-ReFT/src/eval/test_counting_superclevr.py`: Specialized script for out-of-domain math testing on the Superclever dataset. ([Superclevr Image Download](https://www.cs.jhu.edu/~zhuowan/zhuowan/SuperCLEVR/to_be_released/images.zip))
 
 - `/Curr-ReFT/src/eval/muti_process_eval_for_base_model.py`: Dedicated script for testing base models to generate comparative experimental results.
-
 
 ## Curriculum Reinforcement Learning Data
 
