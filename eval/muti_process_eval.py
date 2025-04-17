@@ -63,7 +63,7 @@ def get_ds_path(task_type, in_domain=True):
         'math':"/mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/openr1_8k/math_math_test.jsonl"
     }  # "/mnt/tenant-home_speed/dhl/RL_VL3B/data/flickr_3k_2task/detection_flickr_test.jsonl"
     outdomain_dict={ 
-        'detection':"", #/mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/rec_jsons_processed/refgta_subsample.json
+        'detection':"", 
         'classify':"/mnt/tenant-home_speed/dhl/RL_VL3B/data/pascal/classify_pascal_voc_test.jsonl",
         'coco_vqa':"/mnt/tenant-home_speed/dhl/VLM-R1-main/data/llava_pretrain_vqa/llava_vqa_llava_vqa_test.jsonl",
         'math':"/mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/superclevr_test200_counting_problems.jsonl"
