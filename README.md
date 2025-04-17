@@ -54,7 +54,7 @@ We deeply investigate the R1-like RL in VLM(MLLM), mainly for answering the foll
 
 ## Requirement
 1、We implete SFT training based on [MS-Swift](https://github.com/modelscope/ms-swift) 
-for specifically we use ms-swift 3.2.0, 可以用如下指令安装:
+for specifically we use ms-swift 3.2.0:
 ```bash
    conda create -n swift python=3.10
    conda activate swift
@@ -233,8 +233,47 @@ NPROC_PER_NODE=8 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 MAX_PIXELS=401408 swift sf
 ```
 
 
+## Evalution
+
+### Jsonl Data for Evaluation
+The dataset includes both in-domain and out-of-domain test files for comprehensive evaluation:
+
+**In-Domain Test Files**
+
+| Task Type | File Path |
+|-----------|-----------|
+| Detection | `/Curr-ReFT-data/grpo_data/train/open/coco_3k_2task/detection_coco_test.jsonl` |
+| Classification | `/Curr-ReFT-data/grpo_data/train/open/coco_3k_2task/classify_v2_coco_test.jsonl` |
+| Math | `/Curr-ReFT-data/grpo_data/train/open/openr1_8k/math_math_test.jsonl` |
+
+**Out-of-Domain Test Files**
+
+| Task Type | File Path |
+|-----------|-----------|
+| Detection | `/Curr-ReFT-data/grpo_data/test/Refgta/refgta_subsample_resize.json` ([RefGTA Image Download](https://drive.google.com/drive/folders/1pcdwA--xSAkbsOwjqhhyXMRZH7_sjQXU)) |
+| Classification | `/Curr-ReFT-data/grpo_data/test/pascal/classify_pascal_voc_test.jsonl` |
+| Math | `/Curr-ReFT-data/grpo_data/test/superclever/superclevr_test200_counting_problems.jsonl`  ([Superclevr Image Download](https://www.cs.jhu.edu/~zhuowan/zhuowan/SuperCLEVR/to_be_released/images.zip)) |
+
+These test files are used to evaluate model performance on both familiar (in-domain) and unfamiliar (out-of-domain) data distributions, providing a comprehensive assessment of the model's generalization capabilities.
+
+
+### Evaluation Scripts
+
+To accelerate testing, we utilize multi-GPU evaluation with each GPU testing a different checkpoint:
+
+- `/Curr-ReFT/src/eval/muti_process_eval.py`: Main evaluation script for all in-domain and out-of-domain tests across the three tasks.
+
+- `/Curr-ReFT/src/eval/muti_process_eval_for_refgta.py`: Specialized script for out-of-domain detection testing on the RefGTA dataset, which includes additional coordinate transformations for more accurate evaluation.
+
+- `/Curr-ReFT/src/eval/test_counting_superclevr.py`: Specialized script for out-of-domain math testing on the Superclever dataset.
+
+- `/Curr-ReFT/src/eval/muti_process_eval_for_base_model.py`: Dedicated script for testing base models to generate comparative experimental results.
+
+
 ## Dataset
 We have included the jsonl in the project, and the fig could be download [here](http...)
+
+
 
 ## Result Update (Results in this version, we use Gpt-3.5t as a judge, which is differenet from the results in paper with Qwen2.5VL-72B judging)
 
