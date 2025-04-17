@@ -264,7 +264,7 @@ These test files are used to evaluate model performance on both familiar (in-dom
 The evaluation uses the same environment configuration as training: [R1-V](https://github.com/ding523/Curr_REFT/blob/main/requirements_for_R1_V.txt)
 
 #### Main Evaluation Script
-- `/Curr-ReFT/src/eval/muti_process_eval.py`: Multi-GPU evaluation script for most in-domain and out-of-domain tests across all three tasks.
+- `/Curr-ReFT/src/eval/muti_process_eval.py`: Multi-GPU evaluation script for most in-domain and out-of-domain tests across all three tasks. (we provide a [shell script](https://github.com/ding523/Curr_REFT/blob/main/eval/Test_multi_GPU.sh).)
 
 #### Task-Specific Scripts
 For out-of-domain testing of detection and math tasks, we provide specialized scripts:
