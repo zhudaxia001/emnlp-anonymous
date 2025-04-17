@@ -57,16 +57,14 @@ args = parser.parse_args()
 # 给 任务类型 和 是否跨域 返回 测试json路径：
 def get_ds_path(task_type, in_domain=True):
     indomain_dict={
-        'detection':"/mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/coco_3k_2task/detection_coco_test.jsonl",
-        'classify':"/mnt/tenant-home_speed/dhl/RL_VL3B/data/coco_3k_2task/classify_v2_coco_test.jsonl",
-        'coco_vqa':"/mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/coco2017_vqa/coco_vqa_coco_vqa_test.jsonl",
-        'math':"/mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/openr1_8k/math_math_test.jsonl"
-    }  # "/mnt/tenant-home_speed/dhl/RL_VL3B/data/flickr_3k_2task/detection_flickr_test.jsonl"
+        'detection':"/grpo_sft_data/grpo_data/train/open/coco_3k_2task/detection_coco_test.jsonl",
+        'classify':"/grpo_sft_data/grpo_data/train/open/coco_3k_2task/classify_v2_coco_test.jsonl",
+        'math':"/grpo_sft_data/grpo_data/train/open/openr1_8k/math_math_test.jsonl"
+    } 
     outdomain_dict={ 
-        'detection':"", 
-        'classify':"/mnt/tenant-home_speed/dhl/RL_VL3B/data/pascal/classify_pascal_voc_test.jsonl",
-        'coco_vqa':"/mnt/tenant-home_speed/dhl/VLM-R1-main/data/llava_pretrain_vqa/llava_vqa_llava_vqa_test.jsonl",
-        'math':"/mnt/tenant-home_speed/dhl/VLM-R1-main/data/rec_jsons_processed/superclevr_test200_counting_problems.jsonl"
+        'detection':"",  # /grpo_sft_data/grpo_data/test/Refgta/refgta_subsample_resize.json (test in another python file)
+        'classify':"/grpo_data/test/pascal/classify_pascal_voc_test.jsonl",
+        'math':"/Curr_REFT/eval/superclevr_test200_counting_problems.jsonl"
     }
     if in_domain:
         return indomain_dict[task_type]
