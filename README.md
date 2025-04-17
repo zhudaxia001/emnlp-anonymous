@@ -20,7 +20,7 @@ We deeply investigate the R1-like RL in VLM(MLLM), mainly for answering the foll
 4. After the RL phase, is there a possibility of performance degradation in certain aspects of the model? How can the overall training process be refined to address this issue?
 
 
-## Models & Data
+## Models & Data Checkpoints
 
 ## 🤖 Models
 
@@ -273,48 +273,26 @@ To accelerate testing, we utilize multi-GPU evaluation with each GPU testing a d
 ## Dataset
 We have included the jsonl in the project, and the fig could be download [here](https://huggingface.co/datasets/ZTE-AIM/Curr-ReFT-data)
 
-### Dataset Overview
-
-Curr-ReFT-data contains training data for both stages of the Curr-ReFT methodology. The proposed Curr-ReFT post-training paradigm consists of two consecutive training stages: 1. Curriculum Reinforcement Learning: Gradually increasing task difficulty through reward mechanisms that match task complexity. 2. Rejected Sample based Self-improvement: Maintaining the foundational capabilities of the LLM model.
-
-- The data is organized as follows:
- 
-```bash
--grpo_data
-  -images
-  -test
-  -train
--SFT_data
-  -reject
-  -sft
-  -images
-```
-
-* grpo_data: The "images" folder contains all image files. The "train" folder includes training and in-domain test JSONL files for all three stages (the test files inside are for in-domain scenarios), while the "test" folder contains only JSONL files for out-of-domain testing across the three tasks.
-* SFT_data: The "reject" folder contains JSON files for Rejected Sample based Self-improvement, while the "sft" folder contains JSONL files for standard SFT (used for comparative experiments in the paper). All images are stored in the "images" folder.
-
-
-**Curriculum Reinforcement Learning Data**
+### Curriculum Reinforcement Learning Data
 
 The Curriculum Reinforcement Learning Data spans three distinct multimodal tasks:
 
-### Visual Detection
-- **Training**: 3,000 images sampled from RefCOCO
-- **In-domain Testing**: 1,000 images from RefCOCO
-- **Out-of-domain Testing**: 1,000 samples from RefGTA for evaluating object localization capabilities
+**Visual Detection**  
+- Training: 3,000 images sampled from RefCOCO
+- In-domain Testing: 1,000 images from RefCOCO
+- Out-of-domain Testing: 1,000 samples from RefGTA for evaluating object localization capabilities
 
-### Visual Classification
-- **Training**: 3,000 images from RefCOCO and RefCOCOg
-- **In-domain Testing**: 1,000 samples from the same sources
-- **Out-of-domain Testing**: 1,000 samples from Pascal-VOC for evaluating visual categorization ability
+**Visual Classification**
+- Training: 3,000 images from RefCOCO and RefCOCOg
+- In-domain Testing: 1,000 samples from the same sources
+- Out-of-domain Testing: 1,000 samples from Pascal-VOC for evaluating visual categorization ability
 
-### Multimodal Mathematical Reasoning
-- **Training**: 3,000 samples covering geometry proofs and visual math problems from Math360K and Geo170K
-- **In-domain Testing**: 1,000 samples from the same sources
-- **Out-of-domain Testing**: 500 samples from CLEVER-70k-Counting
+**Multimodal Mathematical Reasoning**
+- Training: 3,000 samples covering geometry proofs and visual math problems from Math360K and Geo170K
+- In-domain Testing: 1,000 samples from the same sources
+- Out-of-domain Testing: 500 samples from CLEVER-70k-Counting
 
 **Note**: Files with suffixes "_train" and "_val" are used for training, while files with the "_test" suffix are used exclusively for testing. The "_val" files are not used for validation but are incorporated into the training data, which does not affect the integrity of in-domain testing results.
-
 
 **Data Format**
 
@@ -330,8 +308,7 @@ Reasoning problems are stored in JSON format, with each row containing the follo
 
 **Rejected Sample based Self-improvement Data**
 
-Rejected Sample based Self-improvement Data comprises 1,520 high-quality examples across diverse domains: pure text mathematics, science, multimodal mathematics, and general knowledge. This dataset was meticulously curated using GPT-4-O as a reward model to evaluate generated responses against multiple criteria: accuracy, logical consistency, format compliance, and linguistic fluency. Responses were quantitatively assessed on a 0-100 scale, with only those surpassing a threshold of 85 being integrated into the enhanced dataset alongside their corresponding queries. The self-improvement training process utilizes this high-quality data to optimize the model while preserving its reasoning capabilities, striking a balance between enhancing fundamental skills and maintaining advanced reasoning abilities across diverse domains. The dataset composition is as follows:
-
+Rejected Sample based Self-improvement Data comprises 1,520 high-quality examples across diverse domains: pure text mathematics, science, multimodal mathematics, and general knowledge. This dataset was meticulously curated using GPT-4-O as a reward model to evaluate generated responses against multiple criteria: accuracy, logical consistency, format compliance, and linguistic fluency. Responses were quantitatively assessed on a 0-100 scale, with only those surpassing a threshold of 85 being integrated into the enhanced dataset alongside their corresponding queries. 
 
 1. **Mathematics Domain** (700 examples):
    - **Multimodal Data** (300 examples):
