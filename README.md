@@ -260,8 +260,21 @@ These test files are used to evaluate model performance on both familiar (in-dom
 
 
 ### Evaluation Scripts
-
 The evaluation uses the same environment configuration as training: [R1-V](https://github.com/ding523/Curr_REFT/blob/main/requirements_for_R1_V.txt)
+```bash
+python Curr_ReFT/eval/pass_at_k.py \
+    --input_file /mnt/tenant-home_speed/dhl/VLM-R1-main/Train_sh_files/fig1/pass@k/test_samples/choice/choice_samples.jsonl \
+    --task_type "choice" \  # 这个会影响存储的output_dir
+    --output_dir /mnt/tenant-home_speed/dhl/VLM-R1-main/Train_sh_files/fig1/pass@k/test_samples/choice \
+    --k_values "1,2,4,16,32,64,128,256" \   # 需要测试的k值 用,分隔开即可   
+    --model_url 'http://10.55.33.23:30252/v1/chat/completions' \  # 改成你待测模型部署的api链接
+    --model_name 'Qwen2.5-VL-7B-Instruct' \  
+    --judge_url 'http://10.55.33.23:31203/v1/chat/completions' \     # 裁判模型调用链接
+    --judge_model 'NTele-72B-V3' \
+    --threads 32    # 并发数  最大32
+```
+
+#### Pass@k Evaluation Script
 
 #### Main Evaluation Script
 - `/Curr-ReFT/src/eval/muti_process_eval.py`: Multi-GPU evaluation script for most in-domain and out-of-domain tests across all three tasks. (we provide a [shell script](https://github.com/ding523/Curr_REFT/blob/main/eval/Test_multi_GPU.sh).)
