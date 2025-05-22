@@ -261,6 +261,9 @@ These test files are used to evaluate model performance on both familiar (in-dom
 
 ### Evaluation Scripts
 The evaluation uses the same environment configuration as training: [R1-V](https://github.com/ding523/Curr_REFT/blob/main/requirements_for_R1_V.txt)
+
+#### Pass@k Evaluation Script
+![combined_pass_at_k_deepseek](https://github.com/user-attachments/assets/93af594b-630a-4ca9-98bb-8a1ce6d8b4c3)
 ```bash
 python Curr_ReFT/eval/pass_at_k.py \
     --input_file /mnt/tenant-home_speed/dhl/VLM-R1-main/Train_sh_files/fig1/pass@k/test_samples/choice/choice_samples.jsonl \
@@ -273,8 +276,6 @@ python Curr_ReFT/eval/pass_at_k.py \
     --judge_model 'NTele-72B-V3' \
     --threads 32    # 并发数  最大32
 ```
-
-#### Pass@k Evaluation Script
 
 #### Main Evaluation Script
 - `/Curr-ReFT/src/eval/muti_process_eval.py`: Multi-GPU evaluation script for most in-domain and out-of-domain tests across all three tasks. (we provide a [shell script](https://github.com/ding523/Curr_REFT/blob/main/eval/Test_multi_GPU.sh).)
