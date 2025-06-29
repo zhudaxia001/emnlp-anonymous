@@ -266,26 +266,6 @@ For out-of-domain testing of detection and math tasks, we provide specialized sc
 - `/Curr-ReFT/src/eval/muti_process_eval_for_base_model.py`: Multi-GPU script for generating comparative results with base models
 
 
-
-## Result Update
-
-Results in this version, we use Gpt-3.5t as a judge, which is differenet from the results in paper with Qwen2.5VL-72B judging.
-
-```markdown
-| #  | Model                     | AI2D | MMVet | MMBench | MathVista | OCRBench |
-|----|---------------------------|------|-------|---------|-----------|----------|
-| 1  | Qwen2.5-VL-3B-Instruct    | 74.35| 39.04 | 63.32   | 52.0      | 597      |
-| 2  | InternVL2_5-4B            | 75.84| 42.48 | 72.77   | 56.0      | 681      |
-| 3  | Qwen2-VL-7B-Instruct      | 79.70| 39.40 | 70.19   | 49.4      | 655      |
-| 4  | Qwen2.5-VL-7B-Instruct    | 80.01| 50.69 | 77.92   | 63.8      | 716      |
-| 5  | InternVL2_5-8B            | 65.42| 34.17 | 51.98   | 50.1      | 598      |
-| 6  | InternVL2_5-26B           | 78.01| 42.11 | 71.56   | 51.4      | 628      |
-| 7  | InternVL2_5-38B           | 82.93| 48.58 | 80.07   | 67.6      | 677      |
-| 8  | 3B+SFT                    | 75.45| 32.02 | 63.32   | 53.6      | 589      |
-| 9  | 3B+RL                     | 76.46| 36.28 | 66.41   | 55.3      | 609      |
-| 10 | 3B+Curr-RL                | 77.36| 36.74 | 68.99   | 56.3      | 594      |
-| 11 | 3B_Curr-ReFT              | 79.66| 39.95 | 69.27   | 57.9      | 623      |
-| 12 | 7B-Curr-ReFT              | 83.16| 49.95 | 80.15   | 65.8      | 727      |
 ```
 
 
