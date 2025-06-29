@@ -1,4 +1,4 @@
-# Curr_REFT---Boosting the Generalization and Reasoning of Vision Language Models with Curriculum Reinforcement Learning
+# Curr-ReFT: Overcoming Training Bottlenecks in Small-scale Vision-Language Models via Curriculum Reinforcement Finetuning
 - Updated pass@k evaluation code and usage instructions  --- 2025.05.21
 - We updated our README.md to include code structure and usage instructions --- 2025.04.16
 - We release our code. --- 2025.03.21
