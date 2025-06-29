@@ -1,16 +1,8 @@
 # Curr_REFT---Boosting the Generalization and Reasoning of Vision Language Models with Curriculum Reinforcement Learning
 - Updated pass@k evaluation code and usage instructions  --- 2025.05.21
-- We uploaded our Evaluation guide along with the complete test scripts and the missing SuperCLEVR JSONL files for math out-domain testing at [Curr-ReFT-eval](https://github.com/ding523/Curr_REFT/tree/main/eval) --- 2025.04.17
-- We uploaded our Huggingface Datacard with dataset format specifications and usage instructions at [Curr-ReFT-data](https://huggingface.co/datasets/ZTE-AIM/Curr-ReFT-data), as well as model usage guidelines and parameter descriptions at [7B-Curr-ReFT](https://huggingface.co/ZTE-AIM/7B-Curr-ReFT) and [3B-Curr-ReFT](https://huggingface.co/ZTE-AIM/3B-Curr-ReFT) --- 2025.04.17
 - We updated our README.md to include code structure and usage instructions --- 2025.04.16
-- We upload our model weights (https://huggingface.co/ZTE-AIM/3B-Curr-ReFT) (https://huggingface.co/ZTE-AIM/7B-Curr-ReFT) ---2025.03.25
-- We upload our data (https://huggingface.co/datasets/ZTE-AIM/Curr-ReFT-data). --- 2025.03.25
 - We release our code. --- 2025.03.21
 - We will update the data, code, and model weight, once the cor finish checking.
-
-This is our official implementation of paper 
-> Huilin Deng, Ding Zou, Rui Ma, Hongchen Luo, Yang Cao, Yu Kang (2025)
-Boosting the Generalization and Reasoning of Vision Language Models with Curriculum Reinforcement Learning [Paper in arXiv](https://arxiv.org/abs/2503.07065).
 
 ## Introduction
 We deeply investigate the R1-like RL in VLM(MLLM), mainly for answering the following questions:
@@ -20,21 +12,7 @@ We deeply investigate the R1-like RL in VLM(MLLM), mainly for answering the foll
 4. After the RL phase, is there a possibility of performance degradation in certain aspects of the model? How can the overall training process be refined to address this issue?
 
 
-## Models & Data Checkpoints
 
-## 🤖 Models
-
-- [ZTE-AIM](https://huggingface.co/ZTE-AIM) : Main repository where we've uploaded model weights and data for Curriculum Reinforcement Learning and reject SFT.
-- Trained with Detection/Classification/Multi-Modal Math tasks, our Curr-ReFT model demonstrates superior performance on out-of-domain data and various reasoning-grounding tasks.
-
-
-| Version | Base VLM | Checkpoint | Task Type |
-| ------- | -------- | ---------- | --------- |
-| Qwen2.5VL-3B-Curr-ReFT | Qwen2.5VL-3B | [ZTE-AIM/3B-Curr-ReFT](https://huggingface.co/ZTE-AIM/3B-Curr-ReFT) |Detection/Classification/Multi-Modal Math |
-| Qwen2.5VL-7B-Curr-ReFT | Qwen2.5VL-7B | [ZTE-AIM/7B-Curr-ReFT](https://huggingface.co/omlab/VLM-R1-Qwen2.5VL-3B-Math-0305) |Detection/Classification/Multi-Modal Math |
-
-## 🤖 Data
-- [Data](https://huggingface.co/datasets/ZTE-AIM/Curr-ReFT-data) We've uploaded data for both reinforcement learning and rejection sampling stages in JSON format (question-answer pairs) along with original images.
 - The data is organized as follows:
  
 ```bash
@@ -71,7 +49,6 @@ for specifically we use ms-swift 3.2.0:
 2. Install them using `pip install -e .` in their respective directories
 
 ## Training
-1、Download the code and JSON data ([grpo_sft_data.zip](https://github.com/ding523/Curr_REFT/blob/main/grpo_sft_data.zip)) and organize them as follows:
 ```bash
 Curr_REFT/
 ├── grpo_sft_data/
@@ -313,9 +290,6 @@ Results in this version, we use Gpt-3.5t as a judge, which is differenet from th
 
 
 ## Dataset
-
-We have uploaded the jsonl and fig datas, which could be download [here](https://huggingface.co/datasets/ZTE-AIM/Curr-ReFT-data)
-
 ### Curriculum Reinforcement Learning Data
 
 The Curriculum Reinforcement Learning Data spans three distinct multimodal tasks:
@@ -389,24 +363,3 @@ Rejected Sample based Self-improvement Data comprises 1,520 high-quality example
   ]
 }
 ```
-
-
-## Institution
-- ZTE-AIM
-- University of Science and Technology of China
-
-## Model Contact
-- huilin_deng@mail.ustc.edu.cn
-- zoudinghust@gmail.com
-- 214711069@csu.edu.cn
-
-## Citation
-@misc{deng2025boostinggeneralizationreasoningvision,
-      title={Boosting the Generalization and Reasoning of Vision Language Models with Curriculum Reinforcement Learning}, 
-      author={Huilin Deng and Ding Zou and Rui Ma and Hongchen Luo and Yang Cao and Yu Kang},
-      year={2025},
-      eprint={2503.07065},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2503.07065}, 
-}
